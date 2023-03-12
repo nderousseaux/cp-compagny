@@ -1,4 +1,4 @@
-$navBarDuration: 0.5s;
+$navBarDuration: 1s;
 $titleDuration: 0.5s;
 nav {
   display: flex;
@@ -94,7 +94,7 @@ header {
       position: absolute;
       inset: 0;
       background-color: black;
-      animation: rideaufadein 1s ease-in-out forwards;
+      animation: rideaufadein 1.3s ease-in-out forwards;
     }
     &:nth-child(1) {
       &:after {
@@ -118,7 +118,7 @@ header {
 
 @keyframes navbarfadein {
   0% {
-    transform: translateY(-10%);
+    transform: translateY(-20%);
     opacity: 0;
   }
   100% {
