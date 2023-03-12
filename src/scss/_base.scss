@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: 'kanit-bold';
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+ul {
+  list-style: none;
+}

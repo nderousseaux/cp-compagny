@@ -1,0 +1,148 @@
+$navBarDuration: 0.5s;
+$titleDuration: 0.5s;
+nav {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1rem;
+  font-family: "kanit";
+  font-size: small;
+  animation: navbarfadein $navBarDuration ease-in-out forwards;
+
+  img {
+    width: 80px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  ul {
+    margin: 0 1rem;
+    display: flex;
+    align-items: center;
+
+    &:first-child {
+      gap: 1rem;
+    }
+
+    &:last-child {
+      gap: 0.4rem;
+    }
+  }
+
+  img {
+    // On inverse la couleur du logo
+    filter: invert(1);
+  }
+}
+
+header {
+  text-align: center;
+  margin: 3rem 0 2rem 0;
+  
+  transform:scale(1.3,1);
+  letter-spacing: 0.1em;
+  h1{
+    line-height: 1;
+    font-size: calc(11vw / 2);
+    overflow: hidden;
+
+    span{
+      display: inline-block;
+      transform: translateY(100%);
+      animation: titlefadein $titleDuration ease-in-out forwards;
+      animation-delay: $navBarDuration - 300ms;
+    }
+
+    &:last-child {
+      color:transparent;
+      background-color: transparent;
+      -webkit-text-stroke: 0.3vw white;
+
+      span {
+        animation-delay: calc(#{$titleDuration} + #{$navBarDuration}/2 - 300ms);
+      }
+    }
+  }
+}
+
+.images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  flex-grow: 1;
+  gap: 1rem;
+  
+  height: 100vh;
+
+  overflow: visible;
+
+  img {
+    height: 85%;
+    object-fit: cover;
+    object-position: center;
+
+  }
+
+
+  > div {
+    position:relative;
+    overflow: hidden;
+
+    &:after {
+      content:'';
+      position: absolute;
+      inset: 0;
+      background-color: black;
+      animation: rideaufadein 1s ease-in-out forwards;
+    }
+    &:nth-child(1) {
+      &:after {
+        animation-delay: calc(#{$titleDuration} + #{$navBarDuration}/2);
+      }
+    }
+
+    &:nth-child(2) {
+      &:after {
+        animation-delay: calc(#{$titleDuration} + #{$navBarDuration}/2 + 300ms);
+      }
+    }
+
+    &:nth-child(3) {
+      &:after {
+        animation-delay: calc(#{$titleDuration} + #{$navBarDuration}/2 + 600ms);
+      }
+    }
+  }
+}
+
+@keyframes navbarfadein {
+  0% {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes titlefadein {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes rideaufadein {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
