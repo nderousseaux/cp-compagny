@@ -98,6 +98,7 @@ header {
   > div {
     position:relative;
     overflow: hidden;
+    height: 100%;
 
     &:after {
       content:'';
@@ -124,6 +125,19 @@ header {
       }
     }
   }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-90px);
+  p {
+    text-align: center;
+    font-size: 0.7rem;
+    color: #585858;
+  }
+
 }
 
 @keyframes navbarfadein {
